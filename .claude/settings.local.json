@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"node --version; npm --version; pnpm --version\")"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"c:/Projetos/Claude/Testes/Chatbot\" && git add -A && git commit -m \"Auto-update: $(date '+%Y-%m-%d %H:%M:%S')\" && git push origin main"
+          }
+        ]
+      }
+    ]
+  }
+}
